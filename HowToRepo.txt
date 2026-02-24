@@ -67,9 +67,8 @@ This prevents conflicts and divergence.
 > Daily Safe Routine
 Before starting work
 
-git checkout master
-git pull origin master
-git checkout -b feature/new-task
+git checkout branchname
+git pull
 
 Before pushing (to resolve conflicts locally in case)
 git pull origin master
