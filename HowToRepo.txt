@@ -1,15 +1,44 @@
-Guide on how to use the cloned repository without breaking it (hopefully)
+Guide on how to use the cloned repository without breaking it (hopefully
 
-> Get updates from the original repository
+> ALWAYS WORK ON BRANCHES (This Is Critical)
+When starting new work:
 
+git checkout master
+git pull origin master
+git checkout -b branch/my-feature-name
+
+Then:
+
+git add .
+git commit -m "Implement X"
+git push -u origin branch/my-feature-name
+
+
+
+> Daily Safe Routine
+Before starting work
+
+git checkout master
+git pull origin master
+git checkout -b feature/new-task
+
+Before pushing (to resolve conflicts locally in case)
+git pull origin master
+
+
+
+> Get updates from the original repository (only one needs to do it regularly)
+
+git checkout master
 git fetch upstream
 git merge upstream/master
+git push origin master
 
 
+# below it's to work directly on main 
 > Push the updated result to your GitHub
 
 git push
-
 
 > Add your files
 
