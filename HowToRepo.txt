@@ -1,0 +1,18 @@
+Guide on how to use the cloned repository without breaking it (hopefully)
+
+> Get updates from the original repository
+
+git fetch upstream
+git merge upstream/master
+
+
+> Push the updated result to your GitHub
+
+git push
+
+
+> Add your files
+
+git add new_file.py
+git commit -m "Add new feature"
+git push
