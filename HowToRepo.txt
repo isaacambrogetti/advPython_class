@@ -1,4 +1,4 @@
-Guide on how to use the cloned repository without breaking it (hopefully
+Guide on how to use the cloned repository without breaking it (hopefully)
 
 > ALWAYS WORK ON BRANCHES (This Is Critical)
 
@@ -83,8 +83,36 @@ git merge upstream/master
 git push origin master
 
 
+## WHEN STARTING TO WORK TO NEW HOMEWORK ##
 
+STEP BY STEP
+1. Every time before starting a new homework we merge the previous hw branch and delete it both locally and on github.
+2. Then pull the changes the professors made on gitlab to the master in our github repo.
+3. Then we create a new branch to work on the new hw.
+
+Here's the steps:
+1. 
+git checkout master         # move to the master branch (where you want to merge the changes)
+git merge trybranch         # merge the branch to the main
+git branch -d trybranch     # delete the branch if it has been merged correctly it should raise any error
+git branch                  # check if it has been deleted locally
+git push                    # push the merge to the github repo
+git push origin --delete trybranch      # delete the branch from github too
+
+2. 
+git fetch upstream                              # check the connection to the GitLab page
+git log --oneline master..upstream/master       # check if there are new commits
+git checkout master                             # move to master branch
+git merge upstream/master                       # merges the repo to the gitlab one
+
+if you're still working on the previous hw, do get back to that branch in this way before making changes:
+git checkout my-branch                          # to go back to the branch you're working with
+
+3.
+git checkout -b branch/my-feature-name          # creates a new branch and moves it to it
+git branch                                      # check if the branch is created and you're in it
 
 
 
 The repo is set so that there is the need of someone approval before merging the branch to the master
+(apparently it doesn't work i need to change it)
