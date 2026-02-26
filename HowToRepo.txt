@@ -113,6 +113,28 @@ git checkout -b branch/my-feature-name          # creates a new branch and moves
 git branch                                      # check if the branch is created and you're in it
 
 
+## WHAT THE OTHER TEAMMATE HAS TO DO TO GET UP TO DATE ##
+1. Fetch everything and prune deleted branches
+2. Update local master
+3. Delete the old branch locally (since it was merged)
+4. Get the new hw2 branch
+
+
+1.
+git fetch --all --prune         # Fetch everything and prune deleted branches on GitHub
+
+2.
+git checkout master             # move to master branch
+git pull origin master          # Update local master
+git status                      # verify if it's up to date : Your branch is up to date with 'origin/master'
+
+3.
+git checkout master             # move to master 
+git branch -d old-branch-name   # if git complains it is not merged do -D (if you're sure it is)
+
+4.
+git checkout -b hw2 origin/hw2  # you should be in the new branch and can start working
+
 
 The repo is set so that there is the need of someone approval before merging the branch to the master
 (apparently it doesn't work i need to change it)
