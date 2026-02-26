@@ -1,7 +1,50 @@
 Guide on how to use the cloned repository without breaking it (hopefully
 
 > ALWAYS WORK ON BRANCHES (This Is Critical)
-When starting new work:
+
+Case 1 — You Already Have the Branch Locally
+- Check where you are:
+    git branch
+        If you see:     * trybranch     Then you are already on it.
+
+- Step 1 — Make sure you're up to date
+    git pull origin trybranch
+
+- Step 2 — Make changes
+    Edit files.
+
+- Step 3 — Commit
+    git add .
+    git commit -m "write work description"
+
+- Step 4 — Push
+    git push
+That updates the existing branch on GitHub. If there’s a Pull Request open, it updates automatically.
+
+
+Case 2 — The Branch Exists on GitHub But Not Locally
+
+- First fetch all remote branches:
+    git fetch origin
+
+- Then check available remote branches:
+    git branch -r
+        You’ll see something like:      
+            origin/master
+            origin/trybranch
+
+- Now create a local tracking branch:
+    git checkout -b trybranch origin/trybranch
+ Now it is linked.
+
+- Then follow the normal workflow:
+    git add .
+    git commit -m "write work description"
+    git push
+
+
+
+Case 3 - Creating a new branch
 
 git checkout master
 git pull origin master
@@ -13,14 +56,19 @@ git add .
 git commit -m "Implement X"
 git push -u origin branch/my-feature-name
 
+( -u sets the branch to the one to as standard )
+
+! If Your Coworker Pushed New Changes !
+Before committing new work, always do:
+    git pull origin trybranch
+This prevents conflicts and divergence.
 
 
 > Daily Safe Routine
 Before starting work
 
-git checkout master
-git pull origin master
-git checkout -b feature/new-task
+git checkout branchname
+git pull
 
 Before pushing (to resolve conflicts locally in case)
 git pull origin master
@@ -35,13 +83,8 @@ git merge upstream/master
 git push origin master
 
 
-# below it's to work directly on main 
-> Push the updated result to your GitHub
 
-git push
 
-> Add your files
 
-git add new_file.py
-git commit -m "Add new feature"
-git push
+
+The repo is set so that there is the need of someone approval before merging the branch to the master
