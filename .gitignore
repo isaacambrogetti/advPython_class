@@ -1,4 +1,5 @@
 .vscode
+.python-version
 notebooks_dev
 *.DS_Store
 .venv/
