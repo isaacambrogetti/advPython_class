@@ -3,3 +3,4 @@
 notebooks_dev
 *.DS_Store
 .venv/
+output
