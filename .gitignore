@@ -1,6 +1,10 @@
 .vscode
 .python-version
 notebooks_dev
+<<<<<<< HEAD
 *.DS_Store
 .venv/
 output
+=======
+output
+>>>>>>> upstream/master
